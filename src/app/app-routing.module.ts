@@ -1,8 +1,11 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { TickerComponent } from './ticker/ticker.component';
 
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: "", component: TickerComponent }
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

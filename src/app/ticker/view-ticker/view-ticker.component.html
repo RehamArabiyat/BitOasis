@@ -1,0 +1,55 @@
+
+  <table >
+    <thead>
+      <tr class="bg-primary text-light">
+        <th
+          scope="col"
+
+        >currency Pair ID</th>
+        <th
+          scope="col"
+
+        >Last Trade Price</th>
+        <th
+          scope="col"
+
+        > Lowest Ask</th>
+
+        <th
+        scope="col"
+
+      >Highest Bid</th>
+      <th
+      scope="col"
+
+    >Percent Change 24 hours</th>
+
+    <th
+    scope="col"
+
+  >Base Currency 24 hours</th>
+      </tr>
+    </thead>
+
+
+    <tbody *ngIf="tickerData">
+      <tr >
+        <td>{{tickerData[0]}}</td>
+
+        <td>
+          {{tickerData[1]}}
+        </td>
+        <td>
+          {{tickerData[2]}}
+        </td>
+        <td>  {{tickerData[3]}}</td>
+
+        <td>
+          {{tickerData[4]}}
+        </td>
+        <td>
+          {{tickerData[5]}}
+        </td>
+      </tr>
+    </tbody>
+  </table>

@@ -1,0 +1,24 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+table, th, td {
+  border: 1px solid black;
+}
+
+th{
+  background-color: #03a9f4;
+
+}
+
+p{
+  display: inline;
+}

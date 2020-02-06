@@ -1,0 +1,50 @@
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+th, td {
+  text-align: left;
+  padding: 8px;
+}
+table, th, td {
+  border: 1px solid black;
+}
+
+th{
+  background-color: #03a9f4;
+
+}
+
+p{
+  display: inline;
+}
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0 !important;;
+  display: inline-block;
+  padding: 3px;
+}
+
+.right {
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+}
+
+.left {
+  transform: rotate(135deg);
+  -webkit-transform: rotate(135deg);
+}
+
+.up {
+  transform: rotate(-135deg);
+  -webkit-transform: rotate(-135deg);
+}
+
+.down {
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+}
