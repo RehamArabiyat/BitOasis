@@ -1,0 +1,138 @@
+<div id="kt_content" class="content d-flex flex-column flex-column-fluid"><!--begin::Entry-->
+  <div class="d-flex flex-column-fluid"><!--begin::Container-->
+  <div class="container align-self-top"><!--begin::Dashboard--> <!--begin::Row-->
+  <div class="row card card-custom bg p-10 mb-10">
+  <div class=""><span class="display-4 font-weight-boldest main-title font-size-h1 ">إدارة الوثائق</span> <br />
+  <p class="mt-3">تتيح لك هذه الصفحة إدارة وثائق المحفطة التأمينية</p>
+  </div>
+  <div class="card ">
+  <div class="card-body"><!--begin: Search Form--> <!--begin::Search Form-->
+  <div class="form-group row ">
+  <div class="col-lg-2  mb-lg-0 mb-3 "><label>رقم الوثيقة :</label> <input class="form-control datatable-input" type="text" placeholder="البحث برقم الوثيقة" data-col-index="4" /></div>
+  <div class="col-lg-2 mb-lg-0 mb-3"><label>رقم تسجيل المركبة:</label> <input class="form-control datatable-input" type="text" placeholder="البحث برقم المركبة" data-col-index="0" /></div>
+  <div class="col-lg-2  mb-lg-0 mb-3"><label> رقم هوية المستأجر:</label> <input class="form-control datatable-input" type="text" placeholder="البحث برقم الهوية" data-col-index="1" /></div>
+  <div class="col-lg-2  mb-lg-0 mb-6"><label for="exampleSelect1">عرض الوثائق حسب</label><select id="exampleSelect1" class="form-control">
+  <option>الكل</option>
+  <option>وثائق سارية</option>
+  <option>وثائق قاربت على الانتهاء</option>
+  <option>وثائق منتهية</option>
+  </select></div>
+  <div class="col-lg-3  mb-lg-0 mb-6"><button id="kt_search" class="btn btn-primary px-20 mt-8"> بحث </button></div>
+  </div>
+  <!--end::Search Form--> <!--end: Search Form--> <!--begin: Datatable-->
+  <div id="kt_datatable" class="datatable datatable-bordered datatable-head-custom datatable-default datatable-primary datatable-loaded">
+  <table class="datatable-table" style="display: block;">
+  <thead class="datatable-head">
+  <tr class="datatable-row" style="left: 0px;">
+  <th class="datatable-cell datatable-toggle-detail">&nbsp;</th>
+  <th class="datatable-cell datatable-cell-sort" data-field="CompanyName"><span style="width: 100px;">شركة التأمين</span></th>
+  <th class="datatable-cell datatable-cell-sort" data-field="PolicyNum"><span style="width: 80px;">رقم الوثيقة</span></th>
+  <th class="datatable-cell datatable-cell-sort" data-field="Vehicle"><span style="width: 90px;">نوع المركبة</span></th>
+  <th class="datatable-cell datatable-cell-sort" data-field="Lessee" data-autohide-disabled="false"><span style="width: 100px;">المستأجر</span></th>
+  <th class="datatable-cell datatable-cell-sort" data-field="LesseeID" data-autohide-disabled="false"><span style="width: 100px;">هوية المستأجر</span></th>
+  <th class="datatable-cell datatable-cell-sort" data-field="PolicyDate" data-autohide-disabled="false"><span style="width: 100px;">بداية الوثيقة</span></th>
+  <th class="datatable-cell datatable-cell-sort" data-field="PolicyExpDate" data-autohide-disabled="false"><span style="width: 100px;">نهاية الوثيقة</span></th>
+  <th class="datatable-cell datatable-cell-sort" data-field="PolicyStats" data-autohide-disabled="false"><span style="width: 100px;"> حالة الوثيقة</span></th>
+  <th class="datatable-cell datatable-cell-sort" data-field="Action" data-autohide-disabled="false"><span style="width: 170px;">الإجراء </span></th>
+  </tr>
+  </thead>
+  <tbody class="datatable-body">
+  <tr class="datatable-row" style="left: 0px;" data-row="0">
+  <td class="datatable-cell" data-field="CompanyName" aria-label="Casper-Kerluke">
+  <div class="d-flex align-items-center">
+  <div class="symbol symbol-50 symbol-sm flex-shrink-0"><img class="" src="assets/media/logos/ic-logos/takaful.png" alt="photo" /></div>
+  <div class="ml-4"><a class=" mb-0">تكافل الراجحي</a></div>
+  </div>
+  </td>
+  <td class="datatable-cell" data-field="PolicyNum" aria-label="Hayes Boule"><span style="width: 80px;">TR123456</span></td>
+  <td class="datatable-cell" data-field="Vehicle" aria-label="Hayes Boule"><span style="width: 90px;">جيمس/يوكن</span></td>
+  <td class="datatable-cell" data-field="Lessee" aria-label="Hayes Boule"><span style="width: 100px;">محمد يوسف أحمد</span></td>
+  <td class="datatable-cell" data-field="LesseeID" aria-label="Hayes Boule"><span style="width: 100px;">1234567890</span></td>
+  <td class="datatable-cell" data-field="PolicuDate" aria-label="Hayes Boule"><span style="width: 100px;">2020/09/30</span></td>
+  <td class="datatable-cell" data-field="PolicyExpDate" aria-label="Hayes Boule"><span style="width: 100px;">2021/09/29</span></td>
+  <td class="datatable-cell" data-field="Status" data-autohide-disabled="false" aria-label="5"><span style="width: 100px;"><span class="label label-lg font-weight-bold  label-light-success label-inline">سارية</span></span></td>
+  <td class="datatable-cell-left datatable-cell" data-field="Actions" data-autohide-disabled="false" aria-label="null"> <span style="overflow: visible; position: relative; width: 170px;">
+    <a href="#"
+      class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      title="طباعة الوثيقة" aria-haspopup="true" aria-expanded="false" data-toggle="modal"
+      data-target="#isuue-police"> <i class="fas fa-print"></i> </a>
+    <a href="#"
+      class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      title="ارسال الوثيقة" aria-haspopup="true" aria-expanded="false" data-toggle="modal"
+      data-target="#exampleModalCustomScrollable" title="renew"> <i class="fas fa-share-alt"></i>
+    </a>
+      <a (click)="navigateUrl()"
+        class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2">
+        <i class="fas fa-bars"></i> </a>
+        <button type="button" data-toggle="modal"
+        data-target="#exampleModalSizeXl-1"
+        class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2">
+        <i class="far fa-life-ring"></i> </button>
+
+
+  </span></td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  <!--end: Datatable--></div>
+  </div>
+  <!--end::Row--> <!--end::Row--> <!--end::Dashboard--></div>
+  <!--end::Container--></div>
+  <!--end::Entry--></div>
+  <!--end::Content--></div>
+
+
+  <div class="modal fade" id="exampleModalSizeXl-1" tabindex="-1" role="dialog" aria-labelledby="exampleModalSizeXl"
+  style="display: none;" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">عرض سعر
+        </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <i aria-hidden="true" class="ki ki-close"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="row">
+          <!--begin::Col-->
+          <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+            <!--begin::Card-->
+            <div class="card gutter-b card-stretch">
+              <!--begin::Body-->
+              <div class="card-body pt-4">
+
+                <div class="form-group row ">
+                  <div class="col-lg-9  mb-lg-0 mb-3 ">
+                    <label>رقم الوثيقة :</label>
+                    <input type="text" class="form-control datatable-input" placeholder="البحث برقم الوثيقة" data-col-index="4">
+                  </div>
+
+                  <div class="col-lg-3  mb-lg-0 mb-6">
+                    <span></span>
+
+                    <button  class="search-btn-1">Go</button>
+                    <button  class=" btn btn-primary px-20 mt-8" id="kt_search">
+                      <span>
+                        <i class="la la-search"></i>
+                        <span>بحث</span>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+
+
+
+              </div>
+              <!--end::Body-->
+            </div>
+            <!--end:: Card-->
+          </div>
+
+          <!--end::Col-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

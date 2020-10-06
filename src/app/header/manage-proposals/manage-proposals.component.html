@@ -1,0 +1,962 @@
+<div id="kt_content" class="content d-flex flex-column flex-column-fluid"><!--begin::Entry-->
+  <div class="d-flex flex-column-fluid"><!--begin::Container-->
+  <div class="container align-self-center"><!--begin::Dashboard--> <!--begin::Row-->
+  <div class="row card card-custom bg p-10 mb-10">
+  <div class=""><span class="display-4 font-weight-boldest main-title font-size-h1 ">إدارة التسعيرات</span> <br />
+  <p class="mt-3">تتيح لك هذه الصفحة إدارة التسعيرات التي تم إصدارها</p>
+  </div>
+  <div class="card ">
+  <div class="card-body">
+  <div class=" row mb-5">
+  <div class="col-lg-4"><a class="font-weight-bolder btn btn btn-success " href="#" aria-expanded="false" data-toggle="modal" data-target="#exampleModalSizeXl-2"> تسعيرة جديدة </a></div>
+  </div>
+  <!--begin: Search Form--> <!--begin::Search Form-->
+  <div class="form-group row ">
+  <div class="col-lg-3  mb-lg-0 mb-6"><label>الرقم المرجعي :</label> <input class="form-control datatable-input" type="text" placeholder="البحث برقم العرض" data-col-index="4" /></div>
+  <div class="col-lg-3 mb-lg-0 mb-6"><label>رقم هوية المستأجر:</label> <input class="form-control datatable-input" type="text" placeholder="البحث برقم هوية المستأجر" data-col-index="0" /></div>
+  <div class="col-lg-3  mb-lg-0 mb-6"><label for="exampleSelect1">عرض حسب</label><select id="exampleSelect1" class="form-control">
+  <option>الكل</option>
+  <option>تسعيرات سارية</option>
+  <option>تسعيرات منتهية</option>
+  </select></div>
+  <div class="col-lg-3  mb-lg-0 mb-6"><button id="kt_search" class="btn btn-primary px-20 mt-8"> بحث </button></div>
+  </div>
+  <!--end::Search Form--> <!--end: Search Form--> <!--begin: Datatable-->
+  <div id="kt_datatable" class="datatable datatable-bordered datatable-head-custom datatable-default datatable-primary datatable-loaded text-dark">
+  <table class="datatable-table" style="display: block;">
+  <thead class="datatable-head">
+  <tr class="datatable-row" style="left: 0px;">
+  <th class="datatable-cell-center datatable-cell datatable-cell-check" data-field="RecordID"><span style="width: 10px;"><label class="checkbox"> <input name="Checkboxes3" type="checkbox" /> </label></span></th>
+  <th class="datatable-cell datatable-cell-sort" data-field="QouteNum"><span style="width: 100px;">الرقم المرجعي</span></th>
+  <th class="datatable-cell datatable-cell-sort" data-field="QouteDate"><span style="width: 100px;">تاريخ التسعيرة</span></th>
+  <th class="datatable-cell datatable-cell-sort" data-field="Lessee"><span style="width: 100px;">المستأجر</span></th>
+  <th class="datatable-cell datatable-cell-sort" data-field="LesseeID"><span style="width: 100px;">رقم الهوية</span></th>
+  <th class="datatable-cell datatable-cell-sort" data-field="Vehicle"><span style="width: 100px;">المركبة</span></th>
+  <th class="datatable-cell datatable-cell-sort" data-field="QouteAmount" data-autohide-disabled="false"><span style="width: 100px;">قيمة التأمين</span></th>
+  <th class="datatable-cell datatable-cell-sort" data-field="QouteVald" data-autohide-disabled="false"><span style="width: 100px;">صلاحية التسعيرة</span></th>
+  <th class="datatable-cell datatable-cell-sort" data-field="Note" data-autohide-disabled="false"><span style="width: 100px;">حالة التسعيرة</span></th>
+  <th class="datatable-cell-left datatable-cell datatable-cell-sort" data-field="Actions" data-autohide-disabled="false"><span style="width: 125px;">الإجراء</span></th>
+  </tr>
+  </thead>
+  <tbody class="datatable-body">
+  <tr class="datatable-row" style="left: 0px;" data-row="0">
+  <td class="datatable-cell-center datatable-cell datatable-cell-check" data-field="RecordID" aria-label="1"><span style="width: 20px;"><label class="checkbox"> <input name="Checkboxes3" type="checkbox" /> </label></span></td>
+  <td class="datatable-cell" data-field="QouteNum" aria-label="64616-103"><span style="width: 100px;">2268853</span></td>
+  <td class="datatable-cell" data-field="QouteDate" aria-label="Brazil"><span style="width: 100px;">2020/10/02</span></td>
+  <td class="datatable-cell" data-field="Lessee" aria-label="698 Oriole Pass"><span style="width: 100px;">خالد عبدالله محمد</span></td>
+  <td class="datatable-cell" data-field="LesseeID" aria-label="10/15/2017"><span style="width: 100px;">1234567890</span></td>
+  <td class="datatable-cell" data-field="Vehicle" data-autohide-disabled="false" aria-label="1"><span style="width: 100px;">جيمس/يوكن</span></td>
+  <td class="datatable-cell" data-field="QouteAmount" data-autohide-disabled="false" aria-label="1"><span style="width: 100px;">3,520 ر.س</span></td>
+  <td class="datatable-cell" data-field="QouteVald" data-autohide-disabled="false" aria-label="1"><span style="width: 100px;">2020/11/02</span></td>
+  <td class="datatable-cell" data-field="QouteStats" aria-label="5"><span style="width: 112px;"><span class="label label-lg font-weight-bold label-light-success label-inline">ساري</span></span></td>
+  <td class="datatable-cell-left datatable-cell" data-field="Actions" data-autohide-disabled="false" aria-label="null">       <span style="overflow: visible; position: relative; width: 130px;">
+    <button type="button"
+      class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      title="إتمام العملية" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModalSizeXl"> <i class="far fa-paper-plane"></i> </button>
+
+      <button type="button"
+      class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModalSizeXl-3" title="renew"> <i
+        class="fas fa-redo"></i>
+    </button>
+    <a (click)="navigateUrlPropsal()" class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      >
+      <i class="fas fa-bars"></i> </a>
+
+  </span></td>
+  </tr>
+  <tr class="datatable-row" style="left: 0px;" data-row="1">
+  <td class="datatable-cell-center datatable-cell datatable-cell-check" data-field="RecordID" aria-label="1"><span style="width: 20px;"><label class="checkbox"> <input name="Checkboxes3" type="checkbox" /> </label></span></td>
+  <td class="datatable-cell" data-field="QouteNum" aria-label="64616-103"><span style="width: 100px;">1068853</span></td>
+  <td class="datatable-cell" data-field="QouteDate" aria-label="Brazil"><span style="width: 100px;">2020/10/27</span></td>
+  <td class="datatable-cell" data-field="Lessee" aria-label="698 Oriole Pass"><span style="width: 100px;">محمد يوسف أحمد</span></td>
+  <td class="datatable-cell" data-field="LesseeID" aria-label="10/15/2017"><span style="width: 100px;">123456789</span></td>
+  <td class="datatable-cell" data-field="Vehicle" data-autohide-disabled="false" aria-label="1"><span style="width: 100px;">تايوتا/كامري</span></td>
+  <td class="datatable-cell" data-field="QouteAmount" data-autohide-disabled="false" aria-label="1"><span style="width: 100px;">3,520 ر.س</span></td>
+  <td class="datatable-cell" data-field="QouteVald" data-autohide-disabled="false" aria-label="1"><span style="width: 100px;">2020/11/27</span></td>
+  <td class="datatable-cell" data-field="QouteStats" aria-label="5"><span style="width: 112px;"><span class="label label-lg font-weight-bold label-light-danger label-inline">منتهي</span></span></td>
+  <td class="datatable-cell-left datatable-cell" data-field="Actions" data-autohide-disabled="false" aria-label="null">       <span style="overflow: visible; position: relative; width: 130px;">
+    <button type="button"
+      class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      title="إتمام العملية" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModalSizeXl"> <i class="far fa-paper-plane"></i> </button>
+
+      <button type="button"
+      class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModalSizeXl-3" title="renew"> <i
+        class="fas fa-redo"></i>
+    </button>
+    <a (click)="navigateUrlPropsal()" class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      >
+      <i class="fas fa-bars"></i> </a>
+
+  </span></td>
+  </tr>
+  <tr class="datatable-row" style="left: 0px;" data-row="2">
+  <td class="datatable-cell-center datatable-cell datatable-cell-check" data-field="RecordID" aria-label="1"><span style="width: 20px;"><label class="checkbox"> <input name="Checkboxes3" type="checkbox" /> </label></span></td>
+  <td class="datatable-cell" data-field="QouteNum" aria-label="64616-103"><span style="width: 100px;">1068853</span></td>
+  <td class="datatable-cell" data-field="QouteDate" aria-label="Brazil"><span style="width: 100px;">2020/10/27</span></td>
+  <td class="datatable-cell" data-field="Lessee" aria-label="698 Oriole Pass"><span style="width: 100px;">محمد يوسف أحمد</span></td>
+  <td class="datatable-cell" data-field="LesseeID" aria-label="10/15/2017"><span style="width: 100px;">123456789</span></td>
+  <td class="datatable-cell" data-field="Vehicle" data-autohide-disabled="false" aria-label="1"><span style="width: 100px;">تايوتا/كامري</span></td>
+  <td class="datatable-cell" data-field="QouteAmount" data-autohide-disabled="false" aria-label="1"><span style="width: 100px;">3,520 ر.س</span></td>
+  <td class="datatable-cell" data-field="QouteVald" data-autohide-disabled="false" aria-label="1"><span style="width: 100px;">2020/11/27</span></td>
+  <td class="datatable-cell" data-field="QouteStats" aria-label="5"><span style="width: 112px;"><span class="label label-lg font-weight-bold label-light-danger label-inline">منتهي</span></span></td>
+  <td class="datatable-cell-left datatable-cell" data-field="Actions" data-autohide-disabled="false" aria-label="null">       <span style="overflow: visible; position: relative; width: 130px;">
+    <button type="button"
+      class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      title="إتمام العملية" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModalSizeXl"> <i class="far fa-paper-plane"></i> </button>
+
+      <button type="button"
+      class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModalSizeXl-3" title="renew"> <i
+        class="fas fa-redo"></i>
+    </button>
+    <a (click)="navigateUrlPropsal()" class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      >
+      <i class="fas fa-bars"></i> </a>
+
+  </span></td>
+  </tr>
+  <tr class="datatable-row" style="left: 0px;" data-row="3">
+  <td class="datatable-cell-center datatable-cell datatable-cell-check" data-field="RecordID" aria-label="1"><span style="width: 20px;"><label class="checkbox"> <input name="Checkboxes3" type="checkbox" /> </label></span></td>
+  <td class="datatable-cell" data-field="QouteNum" aria-label="64616-103"><span style="width: 100px;">2268853</span></td>
+  <td class="datatable-cell" data-field="QouteDate" aria-label="Brazil"><span style="width: 100px;">2020/10/02</span></td>
+  <td class="datatable-cell" data-field="Lessee" aria-label="698 Oriole Pass"><span style="width: 100px;">خالد عبدالله محمد</span></td>
+  <td class="datatable-cell" data-field="LesseeID" aria-label="10/15/2017"><span style="width: 100px;">1234567890</span></td>
+  <td class="datatable-cell" data-field="Vehicle" data-autohide-disabled="false" aria-label="1"><span style="width: 100px;">جيمس/يوكن</span></td>
+  <td class="datatable-cell" data-field="QouteAmount" data-autohide-disabled="false" aria-label="1"><span style="width: 100px;">3,520 ر.س</span></td>
+  <td class="datatable-cell" data-field="QouteVald" data-autohide-disabled="false" aria-label="1"><span style="width: 100px;">2020/11/02</span></td>
+  <td class="datatable-cell" data-field="QouteStats" aria-label="5"><span style="width: 112px;"><span class="label label-lg font-weight-bold label-light-success label-inline">ساري</span></span></td>
+  <td class="datatable-cell-left datatable-cell" data-field="Actions" data-autohide-disabled="false" aria-label="null">       <span style="overflow: visible; position: relative; width: 130px;">
+    <button type="button"
+      class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      title="إتمام العملية" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModalSizeXl"> <i class="far fa-paper-plane"></i> </button>
+
+      <button type="button"
+      class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModalSizeXl-3" title="renew"> <i
+        class="fas fa-redo"></i>
+    </button>
+    <a (click)="navigateUrlPropsal()" class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      >
+      <i class="fas fa-bars"></i> </a>
+
+  </span></td>
+  </tr>
+  <tr class="datatable-row" style="left: 0px;" data-row="4">
+  <td class="datatable-cell-center datatable-cell datatable-cell-check" data-field="RecordID" aria-label="1"><span style="width: 20px;"><label class="checkbox"> <input name="Checkboxes3" type="checkbox" /> </label></span></td>
+  <td class="datatable-cell" data-field="QouteNum" aria-label="64616-103"><span style="width: 100px;">1068853</span></td>
+  <td class="datatable-cell" data-field="QouteDate" aria-label="Brazil"><span style="width: 100px;">2020/10/27</span></td>
+  <td class="datatable-cell" data-field="Lessee" aria-label="698 Oriole Pass"><span style="width: 100px;">محمد يوسف أحمد</span></td>
+  <td class="datatable-cell" data-field="LesseeID" aria-label="10/15/2017"><span style="width: 100px;">123456789</span></td>
+  <td class="datatable-cell" data-field="Vehicle" data-autohide-disabled="false" aria-label="1"><span style="width: 100px;">تايوتا/كامري</span></td>
+  <td class="datatable-cell" data-field="QouteAmount" data-autohide-disabled="false" aria-label="1"><span style="width: 100px;">3,520 ر.س</span></td>
+  <td class="datatable-cell" data-field="QouteVald" data-autohide-disabled="false" aria-label="1"><span style="width: 100px;">2020/11/27</span></td>
+  <td class="datatable-cell" data-field="QouteStats" aria-label="5"><span style="width: 112px;"><span class="label label-lg font-weight-bold label-light-danger label-inline">منتهي</span></span></td>
+  <td class="datatable-cell-left datatable-cell" data-field="Actions" data-autohide-disabled="false" aria-label="null">       <span style="overflow: visible; position: relative; width: 130px;">
+    <button type="button"
+      class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      title="إتمام العملية" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModalSizeXl"> <i class="far fa-paper-plane"></i> </button>
+
+      <button type="button"
+      class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModalSizeXl-3" title="renew"> <i
+        class="fas fa-redo"></i>
+    </button>
+    <a (click)="navigateUrlPropsal()" class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      >
+      <i class="fas fa-bars"></i> </a>
+
+  </span></td>
+  </tr>
+  <tr class="datatable-row" style="left: 0px;" data-row="5">
+  <td class="datatable-cell-center datatable-cell datatable-cell-check" data-field="RecordID" aria-label="1"><span style="width: 20px;"><label class="checkbox"> <input name="Checkboxes3" type="checkbox" /> </label></span></td>
+  <td class="datatable-cell" data-field="QouteNum" aria-label="64616-103"><span style="width: 100px;">2268853</span></td>
+  <td class="datatable-cell" data-field="QouteDate" aria-label="Brazil"><span style="width: 100px;">2020/10/02</span></td>
+  <td class="datatable-cell" data-field="Lessee" aria-label="698 Oriole Pass"><span style="width: 100px;">خالد عبدالله محمد</span></td>
+  <td class="datatable-cell" data-field="LesseeID" aria-label="10/15/2017"><span style="width: 100px;">1234567890</span></td>
+  <td class="datatable-cell" data-field="Vehicle" data-autohide-disabled="false" aria-label="1"><span style="width: 100px;">جيمس/يوكن</span></td>
+  <td class="datatable-cell" data-field="QouteAmount" data-autohide-disabled="false" aria-label="1"><span style="width: 100px;">3,520 ر.س</span></td>
+  <td class="datatable-cell" data-field="QouteVald" data-autohide-disabled="false" aria-label="1"><span style="width: 100px;">2020/11/02</span></td>
+  <td class="datatable-cell" data-field="QouteStats" aria-label="5"><span style="width: 112px;"><span class="label label-lg font-weight-bold label-light-success label-inline">ساري</span></span></td>
+  <td class="datatable-cell-left datatable-cell" data-field="Actions" data-autohide-disabled="false" aria-label="null">       <span style="overflow: visible; position: relative; width: 130px;">
+    <button type="button"
+      class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      title="إتمام العملية" aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModalSizeXl"> <i class="far fa-paper-plane"></i> </button>
+
+      <button type="button"
+      class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      aria-haspopup="true" aria-expanded="false" data-toggle="modal" data-target="#exampleModalSizeXl-3" title="renew"> <i
+        class="fas fa-redo"></i>
+    </button>
+    <a (click)="navigateUrlPropsal()" class="btn btn-sm btn-light-primary btn-text-dark btn-hover-primary btn-icon mr-2"
+      >
+      <i class="fas fa-bars"></i> </a>
+
+  </span></td>
+  </tr>
+  </tbody>
+  </table>
+  </div>
+  <!--end: Datatable--></div>
+  </div>
+  <!--end::Row--> <!--end::Row--> <!--end::Dashboard--></div>
+  <!--end::Container--></div>
+  <!--end::Entry--></div>
+  <!--end::Content--></div>
+  <div class="modal fade" id="exampleModalSizeXl" tabindex="-1" role="dialog" aria-labelledby="exampleModalSizeXl" style="display: none;" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">إصدار وثيقة
+                </h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <i aria-hidden="true" class="ki ki-close"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                  <div><label class="col-12 font-weight-bolder font-size-h4 mb-10">لإصدار الوثيقة فضلا
+                      إستكمال البيانات التالية</label></div>
+                  <div class="col-12">
+                    <div class="form-group row ">
+                      <div class="col-3">
+                        <label class="font-size-h6">رقم البطاقة الجمركية<span
+                            class="text-danger">*</span></label>
+                        <input type="email" class="form-control form-control-lg"
+                          placeholder="أدخل قيمة المركبة" />
+                      </div>
+                      <div class="col-3">
+                        <label for="exampleSelect1" class="font-size-h6">سنة صنع المركبة<span
+                            class="text-danger">*</span></label>
+                        <select class="form-control select2" id="kt_select4_3" name="param">
+                          <option>إختر سنة صنع المركبة</option>
+                          <option>2020</option>
+                          <option>2021</option>
+                        </select>
+                      </div>
+                      <div class="col-3">
+                        <label class="font-size-h6">رقم البطاقة الجمركية<span
+                            class="text-danger">*</span></label>
+                        <input type="email" class="form-control form-control-lg"
+                          placeholder="أدخل قيمة المركبة" />
+                      </div>
+                    </div>
+                    <div class="separator separator-dashed my-8"></div>
+                    <div class="form-group  row">
+                      <div class="col-4">
+                        <label class="font-size-h6">هوية المستأجر<span class="text-danger">*</span></label>
+                        <input type="email" class="form-control form-control-lg"
+                          placeholder="أدخل هوية المستأجر" />
+                      </div>
+                      <div class="col-3">
+                        <label for="exampleSelect1" class="font-size-h6">تاريخ ميلاد المستأجر (شهر)
+                          <span class="text-danger">*</span></label>
+                        <select class="form-control select2" id="kt_select4_5" name="param">
+                          <option>إختر شهر ميلاد المستأجر</option>
+                          <option>محرم</option>
+                          <option>صفر</option>
+                          <option>ربيع أول</option>
+                          <option>ربيع ثاني</option>
+                        </select>
+                      </div>
+                      <div class="col-3">
+                        <label for="exampleSelect1" class="font-size-h6">تاريخ ميلاد المستأجر (سنة)
+                          <span class="text-danger">*</span></label>
+                        <select class="form-control select2" id="kt_select4_6" name="param">
+                          <option>إختر سنة ميلاد المستأجر</option>
+                          <option>1980</option>
+                          <option>1981</option>
+                          <option>1982</option>
+                          <option>1983</option>
+                        </select>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="separator separator-dashed my-8"></div>
+
+                <div class="row">
+                  <div class="col-12">
+                    <button class="btn btn-lg btn-driver font-weight-bold font-size-h5 mb-5" type="button"
+                      data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
+                      aria-controls="collapseExample"> <i
+                        class="far fa-address-card icon-2x text-white"></i>
+                      هل ترغب في إضافة سائق إضافي
+                    </button>
+                    <div class="collapse" id="collapseExample">
+                      <div class="card card-body">
+                        <div id="kt_repeater_1">
+                          <div class=" row ">
+                            <label class="col-lg-12 col-form-label text-left font-size-h4 ">إضافة
+                              سائق إضافي</label>
+                            <div data-repeater-list="" class="col-lg-12 ">
+                              <div data-repeater-item class="form-group row align-items-end ">
+                                <div class="col-4">
+                                  <label class="font-size-h6 ">هوية السائق<span
+                                      class="text-danger">*</span></label>
+                                  <input type="email" class="form-control form-control-lg"
+                                    placeholder="أدخل هوية السائق" />
+                                </div>
+                                <div class="col-2">
+                                  <label for="exampleSelect1" class="font-size-h6 ">تاريخ ميلاد
+                                    السائق<span class="text-danger">*</span></label>
+                                  <select class="form-control select2" id="kt_select4_8" name="param">
+                                    <option>الشهر</option>
+                                    <option>محرم</option>
+                                    <option>صفر</option>
+                                    <option>ربيع أول</option>
+                                    <option>ربيع ثاني</option>
+                                  </select>
+                                </div>
+                                <div class="col-2">
+                                  <label for="exampleSelect1" class="font-size-h6 ">تاريخ ميلاد
+                                    السائق<span class="text-danger">*</span></label>
+                                  <select class="form-control select2" id="kt_select4_9" name="param">
+                                    <option>السنة</option>
+                                    <option>1980</option>
+                                    <option>1981</option>
+                                    <option>1982</option>
+                                    <option>1983</option>
+                                  </select>
+                                </div>
+                                <div class="col-2">
+                                  <label for="exampleSelect1" class="font-size-h6 "> نوع
+                                    العلاقة<span class="text-danger">*</span></label>
+                                  <select class="form-control select2" id="kt_select4_10" name="param">
+                                    <option>إختر نوع العلاقة</option>
+                                    <option>إبن</option>
+                                    <option>إبنة</option>
+                                    <option>زوجة</option>
+                                    <option>سائق خاص</option>
+                                  </select>
+                                </div>
+                                <div class="col-md-2  ">
+                                  <a href="javascript:;" data-repeater-delete=""
+                                    class="btn btn-lg font-weight-bolder btn-light-danger">
+                                    <i class="la la-trash-o"></i>حذف
+                                  </a>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class=" row">
+                            <div class="col-lg-4">
+                              <a href="javascript:;" data-repeater-create=""
+                                class="btn btn-lg font-weight-bolder btn-light-success">
+                                <i class="la la-plus"></i>إضافه سائق
+                              </a>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+
+
+
+
+            </div>
+            <div class="modal-footer justify-content-between">
+                <button type="button" class="btn btn-lg btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-search btn-lg btn-primary font-weight-bold">إصدر الوثيقة
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="exampleModalSizeXl-2" tabindex="-1" role="dialog" aria-labelledby="exampleModalSizeXl" style="display: none;" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">إصدار وثيقة
+              </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i aria-hidden="true" class="ki ki-close"></i>
+              </button>
+          </div>
+          <div class="modal-body">
+              <div class="row">
+                <div class="col-12 col-form-label">
+                  <div class="radio-inline mb-5">
+                    <label class="radio radio-success font-size-h5 font-weight-bold">
+                      <input checked name="radios6" type="radio" data-target="#scheduleDaily" />
+                      <span></span>بيانات عامة</label>
+                    <label class="radio radio-success font-size-h5 font-weight-bold">
+                      <input name="radios6" type="radio" data-target="#scheduleWeekly" />
+                      <span></span>
+                      رقم تسجيل مركبة</label>
+                  </div>
+                  <div class="separator separator-dashed my-8"></div>
+                  <div class="tab-content">
+                    <div id="scheduleDaily" class="tab-pane active">
+                      <div class="form-group row ">
+                        <div class="col-3">
+                          <label for="exampleSelect1" class="font-size-h6">ماركة المركبة
+                            <span class="text-danger">*</span></label>
+                          <select class="form-control select2 " id="kt_select2_1" name="param">
+                            <option>إختر ماركة المركبة</option>
+                            <option>تايوتا</option>
+                            <option>هيونداي</option>
+                            <option>جي إم سي</option>
+                            <option>فورد</option>
+                            <option>نيسان</option>
+                          </select>
+                        </div>
+                        <div class="col-3">
+                          <label for="exampleSelect1" class="font-size-h6">طراز المركبة<span
+                              class="text-danger">*</span></label>
+                          <select class="form-control select2" id="kt_select2_2" name="param">
+                            <option>إختر طراز المركبة</option>
+                            <option>كامري</option>
+                            <option>كورولا</option>
+                            <option>لاند كروزر</option>
+                            <option>برادو</option>
+                          </select>
+                        </div>
+                        <div class="col-3">
+                          <label for="exampleSelect1" class="font-size-h6">سنة صنع المركبة<span
+                              class="text-danger">*</span></label>
+                          <select class="form-control select2" id="kt_select2_3" name="param">
+                            <option>إختر سنة صنع المركبة</option>
+                            <option>2020</option>
+                            <option>2021</option>
+                          </select>
+                        </div>
+                        <div class="col-3">
+                          <label class="font-size-h6">قيمة المركبة<span
+                              class="text-danger">*</span></label>
+                          <input type="email" class="form-control form-control-lg"
+                            placeholder="أدخل قيمة المركبة" />
+                        </div>
+                      </div>
+                      <div class="separator separator-dashed my-8"></div>
+                      <div class="form-group  row">
+                        <div class="col-4">
+                          <label class="font-size-h6">هوية المستأجر<span
+                              class="text-danger">*</span></label>
+                          <input type="email" class="form-control form-control-lg"
+                            placeholder="أدخل هوية المستأجر" />
+                        </div>
+                        <div class="col-3">
+                          <label for="exampleSelect1" class="font-size-h6">تاريخ ميلاد المستأجر (شهر)
+                            <span class="text-danger">*</span></label>
+                          <select class="form-control select2" id="kt_select2_5" name="param">
+                            <option>إختر شهر ميلاد المستأجر</option>
+                            <option>محرم</option>
+                            <option>صفر</option>
+                            <option>ربيع أول</option>
+                            <option>ربيع ثاني</option>
+                          </select>
+                        </div>
+                        <div class="col-3">
+                          <label for="exampleSelect1" class="font-size-h6">تاريخ ميلاد المستأجر (سنة)<span
+                              class="text-danger">*</span></label>
+                          <select class="form-control select2" id="kt_select2_7" name="param">
+                            <option>إختر سنة ميلاد المستأجر</option>
+                            <option>1980</option>
+                            <option>1981</option>
+                            <option>1982</option>
+                            <option>1983</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <div class="col-6">
+                          <label for="exampleSelect1" class="font-size-h6">تغطيات إضافية
+                            <span class="text-danger">*</span></label>
+                          <select class="form-control selectpicker mltselct" placeholder="تغطيات إضافية"
+                            multiple>
+                            <option>استبدال سيارة 402.50 ر.س
+                            </option>
+                            <option>التغطية الجغرافية لدول مجلس التعاون الخليجي لمدة 12 شهر 345.00 ر.س
+                            </option>
+                            <option>تغطية الحوادث الشخصية للسائق 69.00 ر.س
+                            </option>
+                            <option>تغطية الحوادث الشخصية للسائق والركاب 391.00 ر.س
+
+                            </option>
+
+                          </select>
+                        </div>
+                        <div class="col-6">
+                          <label for="exampleSelect1" class="font-size-h6">قيمة التحمل
+                            <span class="text-danger">*</span></label>
+                          <select class="form-control select2" id="kt_select2_8" name="param">
+                            <option> إختر قيمة التحمل</option>
+                            <option>1000</option>
+                            <option>2000</option>
+                            <option>3000</option>
+                            <option>4000</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="separator separator-dashed my-8"></div>
+                      <div class="row">
+                        <div class="col-12">
+                          <button class="btn btn-lg btn-driver font-weight-bold font-size-h5 mb-5"
+                            type="button" data-toggle="collapse" data-target="#collapseExample"
+                            aria-expanded="false" aria-controls="collapseExample"> <i
+                              class="far fa-address-card icon-2x text-white"></i>
+                            هل ترغب في إضافة سائق إضافي
+                          </button>
+                          <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                              <div id="kt_repeater_1">
+                                <div class=" row ">
+                                  <label class="col-lg-12 col-form-label text-left font-size-h4 ">إضافة
+                                    سائق إضافي</label>
+                                  <div data-repeater-list="" class="col-lg-12 ">
+                                    <div data-repeater-item class="form-group row align-items-end ">
+                                      <div class="col-4">
+                                        <label class="font-size-h6 ">هوية السائق<span
+                                            class="text-danger">*</span></label>
+                                        <input type="email" class="form-control form-control-lg"
+                                          placeholder="أدخل هوية السائق" />
+                                      </div>
+                                      <div class="col-2">
+                                        <label for="exampleSelect1" class="font-size-h6 ">تاريخ ميلاد
+                                          السائق<span class="text-danger">*</span></label>
+                                        <select class="form-control select2" id="kt_select2_8"
+                                          name="param">
+                                          <option>الشهر</option>
+                                          <option>محرم</option>
+                                          <option>صفر</option>
+                                          <option>ربيع أول</option>
+                                          <option>ربيع ثاني</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-2">
+                                        <label for="exampleSelect1" class="font-size-h6 ">تاريخ ميلاد
+                                          السائق<span class="text-danger">*</span></label>
+                                        <select class="form-control select2" id="kt_select2_9"
+                                          name="param">
+                                          <option>السنة</option>
+                                          <option>1980</option>
+                                          <option>1981</option>
+                                          <option>1982</option>
+                                          <option>1983</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-2">
+                                        <label for="exampleSelect1" class="font-size-h6 "> نوع
+                                          العلاقة<span class="text-danger">*</span></label>
+                                        <select class="form-control select2" id="kt_select2_10"
+                                          name="param">
+                                          <option>إختر نوع العلاقة</option>
+                                          <option>إبن</option>
+                                          <option>إبنة</option>
+                                          <option>زوجة</option>
+                                          <option>سائق خاص</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-md-2  ">
+                                        <a href="javascript:;" data-repeater-delete=""
+                                          class="btn btn-lg font-weight-bolder btn-light-danger">
+                                          <i class="la la-trash-o"></i>حذف
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class=" row">
+                                  <div class="col-lg-4">
+                                    <a href="javascript:;" data-repeater-create=""
+                                      class="btn btn-lg font-weight-bolder btn-light-success">
+                                      <i class="la la-plus"></i>إضافه سائق
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div id="scheduleWeekly" class="tab-pane fade">
+                      <div class="form-group row">
+                        <div class="col-3">
+                          <label class="font-size-h6">رقم البطاقة الجمركية<span
+                              class="text-danger">*</span></label>
+                          <input type="email" class="form-control form-control-lg"
+                            placeholder="أدخل قيمة المركبة" />
+                        </div>
+                        <div class="col-3">
+                          <label for="exampleSelect1" class="font-size-h6">سنة صنع المركبة<span
+                              class="text-danger">*</span></label>
+                          <select class="form-control select2" id="kt_select3_3" name="param">
+                            <option>إختر سنة صنع المركبة</option>
+                            <option>2020</option>
+                            <option>2021</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="form-group  row">
+                        <div class="col-4">
+                          <label class="font-size-h6">هوية المستأجر<span
+                              class="text-danger">*</span></label>
+                          <input type="email" class="form-control form-control-lg"
+                            placeholder="أدخل هوية المستأجر" />
+                        </div>
+                        <div class="col-3">
+                          <label for="exampleSelect1" class="font-size-h6">تاريخ ميلاد المستأجر (شهر)
+                            <span class="text-danger">*</span></label>
+                          <select class="form-control select2" id="kt_select3_4" name="param">
+                            <option>إختر شهر ميلاد المستأجر</option>
+                            <option>محرم</option>
+                            <option>صفر</option>
+                            <option>ربيع أول</option>
+                            <option>ربيع ثاني</option>
+                          </select>
+                        </div>
+                        <div class="col-3">
+                          <label for="exampleSelect1" class="font-size-h6">تاريخ ميلاد المستأجر (سنة)<span
+                              class="text-danger">*</span></label>
+                          <select class="form-control select2" id="kt_select3_5" name="param">
+                            <option>إختر سنة ميلاد المستأجر</option>
+                            <option>1980</option>
+                            <option>1981</option>
+                            <option>1982</option>
+                            <option>1983</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="separator separator-dashed my-8"></div>
+                      <div class="form-group row">
+                        <div class="col-6">
+                          <label for="exampleSelect1" class="font-size-h6">تغطيات إضافية
+                            <span class="text-danger">*</span></label>
+                          <select class="form-control selectpicker mltselct" multiple>
+                            <option>استبدال سيارة 402.50 ر.س
+                            </option>
+                            <option>التغطية الجغرافية لدول مجلس التعاون الخليجي لمدة 12 شهر 345.00 ر.س
+                            </option>
+                            <option>تغطية الحوادث الشخصية للسائق 69.00 ر.س
+                            </option>
+                            <option>تغطية الحوادث الشخصية للسائق والركاب 391.00 ر.س
+
+                            </option>
+
+                          </select>
+                        </div>
+                        <div class="col-6">
+                          <label for="exampleSelect1" class="font-size-h6">قيمة التحمل
+                            <span class="text-danger">*</span></label>
+                          <select class="form-control select2" id="kt_select4_8" name="param">
+                            <option> إختر قيمة التحمل</option>
+                            <option>1000</option>
+                            <option>2000</option>
+                            <option>3000</option>
+                            <option>4000</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="row">
+                        <div class="col-12">
+                          <button class="btn btn-lg btn-driver font-weight-bold font-size-h5 mb-5"
+                            type="button" data-toggle="collapse" data-target="#collapseExample"
+                            aria-expanded="false" aria-controls="collapseExample"> <i
+                              class="far fa-address-card icon-2x text-white"></i>
+                            هل ترغب في إضافة سائق إضافي
+                          </button>
+                          <div class="collapse" id="collapseExample">
+                            <div class="card card-body">
+                              <div id="kt_repeater_1">
+                                <div class=" row ">
+                                  <label class="col-lg-12 col-form-label text-left font-size-h4 ">إضافة
+                                    سائق إضافي</label>
+                                  <div data-repeater-list="" class="col-lg-12 ">
+                                    <div data-repeater-item class="form-group row align-items-end ">
+                                      <div class="col-4">
+                                        <label class="font-size-h6 ">هوية السائق<span
+                                            class="text-danger">*</span></label>
+                                        <input type="email" class="form-control form-control-lg"
+                                          placeholder="أدخل هوية السائق" />
+                                      </div>
+                                      <div class="col-2">
+                                        <label for="exampleSelect1" class="font-size-h6 ">تاريخ ميلاد
+                                          السائق<span class="text-danger">*</span></label>
+                                        <select class="form-control select2" id="kt_select3_8"
+                                          name="param">
+                                          <option>الشهر</option>
+                                          <option>محرم</option>
+                                          <option>صفر</option>
+                                          <option>ربيع أول</option>
+                                          <option>ربيع ثاني</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-2">
+                                        <label for="exampleSelect1" class="font-size-h6 ">تاريخ ميلاد
+                                          السائق<span class="text-danger">*</span></label>
+                                        <select class="form-control select2" id="kt_select3_9"
+                                          name="param">
+                                          <option>السنة</option>
+                                          <option>1980</option>
+                                          <option>1981</option>
+                                          <option>1982</option>
+                                          <option>1983</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-2">
+                                        <label for="exampleSelect1" class="font-size-h6 "> نوع
+                                          العلاقة<span class="text-danger">*</span></label>
+                                        <select class="form-control select2" id="kt_select3_10"
+                                          name="param">
+                                          <option>إختر نوع العلاقة</option>
+                                          <option>إبن</option>
+                                          <option>إبنة</option>
+                                          <option>زوجة</option>
+                                          <option>سائق خاص</option>
+                                        </select>
+                                      </div>
+                                      <div class="col-md-2  ">
+                                        <a href="javascript:;" data-repeater-delete=""
+                                          class="btn btn-lg font-weight-bolder btn-light-danger">
+                                          <i class="la la-trash-o"></i>حذف
+                                        </a>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class=" row">
+                                  <div class="col-lg-4">
+                                    <a href="javascript:;" data-repeater-create=""
+                                      class="btn btn-lg font-weight-bolder btn-light-success">
+                                      <i class="la la-plus"></i>إضافه سائق
+                                    </a>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+          <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-lg btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-search btn-lg btn-primary font-weight-bold">سعر الآن
+
+              </button>
+          </div>
+      </div>
+  </div>
+</div>
+<div class="modal fade" id="exampleModalSizeXl-3" tabindex="-1" role="dialog" aria-labelledby="exampleModalSizeXl" style="display: none;" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-xl" role="document">
+      <div class="modal-content">
+          <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">إصدار وثيقة
+              </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <i aria-hidden="true" class="ki ki-close"></i>
+              </button>
+          </div>
+          <div class="modal-body">
+
+              <div class="form-group row ">
+                <div class="col-3">
+                  <label for="exampleSelect1" class="font-size-h6">ماركة المركبة
+                    <span class="text-danger">*</span></label>
+                  <select class="form-control select2 " id="kt_select5_1" name="param">
+                    <option>إختر ماركة المركبة</option>
+                    <option>تايوتا</option>
+                    <option>هيونداي</option>
+                    <option>جي إم سي</option>
+                    <option>فورد</option>
+                    <option>نيسان</option>
+                  </select>
+                </div>
+                <div class="col-3">
+                  <label for="exampleSelect1" class="font-size-h6">طراز المركبة<span
+                      class="text-danger">*</span></label>
+                  <select class="form-control select2" id="kt_select5_2" name="param">
+                    <option>إختر طراز المركبة</option>
+                    <option>كامري</option>
+                    <option>كورولا</option>
+                    <option>لاند كروزر</option>
+                    <option>برادو</option>
+                  </select>
+                </div>
+                <div class="col-3">
+                  <label for="exampleSelect1" class="font-size-h6">سنة صنع المركبة<span
+                      class="text-danger">*</span></label>
+                  <select class="form-control select2" id="kt_select5_3" name="param">
+                    <option>إختر سنة صنع المركبة</option>
+                    <option>2020</option>
+                    <option>2021</option>
+                  </select>
+                </div>
+                <div class="col-3">
+                  <label class="font-size-h6">قيمة المركبة<span
+                      class="text-danger">*</span></label>
+                  <input type="email" class="form-control form-control-lg"
+                    placeholder="أدخل قيمة المركبة" />
+                </div>
+              </div>
+              <div class="separator separator-dashed my-8"></div>
+              <div class="form-group  row">
+                <div class="col-4">
+                  <label class="font-size-h6">هوية المستأجر<span
+                      class="text-danger">*</span></label>
+                  <input type="email" class="form-control form-control-lg"
+                    placeholder="أدخل هوية المستأجر" />
+                </div>
+                <div class="col-3">
+                  <label for="exampleSelect1" class="font-size-h6">تاريخ ميلاد المستأجر (شهر)
+                    <span class="text-danger">*</span></label>
+                  <select class="form-control select2" id="kt_select5_5" name="param">
+                    <option>إختر شهر ميلاد المستأجر</option>
+                    <option>محرم</option>
+                    <option>صفر</option>
+                    <option>ربيع أول</option>
+                    <option>ربيع ثاني</option>
+                  </select>
+                </div>
+                <div class="col-3">
+                  <label for="exampleSelect1" class="font-size-h6">تاريخ ميلاد المستأجر (سنة)<span
+                      class="text-danger">*</span></label>
+                  <select class="form-control select2" id="kt_select5_7" name="param">
+                    <option>إختر سنة ميلاد المستأجر</option>
+                    <option>1980</option>
+                    <option>1981</option>
+                    <option>1982</option>
+                    <option>1983</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group row">
+                <div class="col-6">
+                  <label for="exampleSelect1" class="font-size-h6">تغطيات إضافية
+                    <span class="text-danger">*</span></label>
+                  <select class="form-control selectpicker mltselct" placeholder="تغطيات إضافية"
+                    multiple>
+                    <option>استبدال سيارة 402.50 ر.س
+                    </option>
+                    <option>التغطية الجغرافية لدول مجلس التعاون الخليجي لمدة 12 شهر 345.00 ر.س
+                    </option>
+                    <option>تغطية الحوادث الشخصية للسائق 69.00 ر.س
+                    </option>
+                    <option>تغطية الحوادث الشخصية للسائق والركاب 391.00 ر.س
+
+                    </option>
+
+                  </select>
+                </div>
+                <div class="col-6">
+                  <label for="exampleSelect1" class="font-size-h6">قيمة التحمل
+                    <span class="text-danger">*</span></label>
+                  <select class="form-control select2" id="kt_select5_8" name="param">
+                    <option> إختر قيمة التحمل</option>
+                    <option>1000</option>
+                    <option>2000</option>
+                    <option>3000</option>
+                    <option>4000</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="separator separator-dashed my-8"></div>
+              <div class="row">
+                <div class="col-12">
+                  <button class="btn btn-lg btn-driver font-weight-bold font-size-h5 mb-5"
+                    type="button" data-toggle="collapse" data-target="#collapseExample"
+                    aria-expanded="false" aria-controls="collapseExample"> <i
+                      class="far fa-address-card icon-2x text-white"></i>
+                    هل ترغب في إضافة سائق إضافي
+                  </button>
+                  <div class="collapse" id="collapseExample">
+                    <div class="card card-body">
+                      <div id="kt_repeater_1">
+                        <div class=" row ">
+                          <label class="col-lg-12 col-form-label text-left font-size-h4 ">إضافة
+                            سائق إضافي</label>
+                          <div data-repeater-list="" class="col-lg-12 ">
+                            <div data-repeater-item class="form-group row align-items-end ">
+                              <div class="col-4">
+                                <label class="font-size-h6 ">هوية السائق<span
+                                    class="text-danger">*</span></label>
+                                <input type="email" class="form-control form-control-lg"
+                                  placeholder="أدخل هوية السائق" />
+                              </div>
+                              <div class="col-2">
+                                <label for="exampleSelect1" class="font-size-h6 ">تاريخ ميلاد
+                                  السائق<span class="text-danger">*</span></label>
+                                <select class="form-control select2" id="kt_select5_8"
+                                  name="param">
+                                  <option>الشهر</option>
+                                  <option>محرم</option>
+                                  <option>صفر</option>
+                                  <option>ربيع أول</option>
+                                  <option>ربيع ثاني</option>
+                                </select>
+                              </div>
+                              <div class="col-2">
+                                <label for="exampleSelect1" class="font-size-h6 ">تاريخ ميلاد
+                                  السائق<span class="text-danger">*</span></label>
+                                <select class="form-control select2" id="kt_select5_9"
+                                  name="param">
+                                  <option>السنة</option>
+                                  <option>1980</option>
+                                  <option>1981</option>
+                                  <option>1982</option>
+                                  <option>1983</option>
+                                </select>
+                              </div>
+                              <div class="col-2">
+                                <label for="exampleSelect1" class="font-size-h6 "> نوع
+                                  العلاقة<span class="text-danger">*</span></label>
+                                <select class="form-control select2" id="kt_select5_10"
+                                  name="param">
+                                  <option>إختر نوع العلاقة</option>
+                                  <option>إبن</option>
+                                  <option>إبنة</option>
+                                  <option>زوجة</option>
+                                  <option>سائق خاص</option>
+                                </select>
+                              </div>
+                              <div class="col-md-2  ">
+                                <a href="javascript:;" data-repeater-delete=""
+                                  class="btn btn-lg font-weight-bolder btn-light-danger">
+                                  <i class="la la-trash-o"></i>حذف
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class=" row">
+                          <div class="col-lg-4">
+                            <a href="javascript:;" data-repeater-create=""
+                              class="btn btn-lg font-weight-bolder btn-light-success">
+                              <i class="la la-plus"></i>إضافه سائق
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+          </div>
+          <div class="modal-footer justify-content-between">
+              <button type="button" class="btn btn-lg btn-light-primary font-weight-bold" data-dismiss="modal">Close</button>
+              <button type="button" class="btn btn-search btn-lg btn-primary font-weight-bold">سعر الآن
+
+              </button>
+          </div>
+      </div>
+  </div>
+</div>
+
+
