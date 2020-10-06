@@ -13,28 +13,11 @@
             <div class="card-body">
               <!--begin::Nav Tabs-->
               <div class="px-14 py-0">
-                <ul class="nav nav-tabs pl-15" id="myTab" role="tablist">
-                  <li class="nav-item">
-                    <a class="nav-link px-20 py-6 active" id="home-tab" data-toggle="tab" href="#home">
-                      <span class="nav-text font-size-h5 font-weight-bold">طلب تسعيرة</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link px-20 py-6" id="profile-tab" data-toggle="tab" href="#profile"
-                      aria-controls="profile">
-                      <span class="nav-text font-size-h5 font-weight-bold">إصدار وثيقة</span>
-                    </a>
-                  </li>
-                  <li class="nav-item">
-                    <a class="nav-link px-20 py-6" id="profile-tab-2" data-toggle="tab" href="#profile-2"
-                      aria-controls="profile">
-                      <span class="nav-text font-size-h5 font-weight-bold">إصدار مجموعة وثائق</span>
-                    </a>
-                  </li>
-                </ul>
+
                 <div class="tab-content tab-content-outer" id="myTabContent">
                   <div class="tab-pane fade active show" id="home" role="tabpanel" aria-labelledby="home-tab">
                     <div class="row">
+                      <div><label class="col-12 font-weight-bolder font-size-h4 mb-10">طلب تسعيرة </label></div>
                       <div class="col-12 col-form-label">
                         <div class="radio-inline mb-3">
                           <label class="radio radio-success font-size-h5 font-weight-bold">
@@ -51,46 +34,100 @@
                               <div class="col-3">
                                 <label for="exampleSelect1" class="font-size-h6">ماركة المركبة
                                   <span class="text-danger">*</span></label>
-                                <select class="form-control select2 " id="kt_select2_1" name="param">
-                                  <option>إختر ماركة المركبة</option>
-                                  <option>تايوتا</option>
-                                  <option>هيونداي</option>
-                                  <option>جي إم سي</option>
-                                  <option>فورد</option>
-                                  <option>نيسان</option>
+                                <select class="form-control select2 " id="kt_select2_1" name="param"    >
+                                  <option *ngFor="let maker of vehicleMakerMaster"
+                                  value="{{maker.Id}}"
+                               >
+                                {{maker.VehicleMakeNameAr}}
+                           </option>
                                 </select>
                               </div>
+
+
                               <div class="col-3">
+
                                 <label for="exampleSelect1" class="font-size-h6">طراز المركبة<span
                                     class="text-danger">*</span></label>
                                 <select class="form-control select2" id="kt_select2_2" name="param">
-                                  <option>إختر طراز المركبة</option>
-                                  <option>كامري</option>
-                                  <option>كورولا</option>
-                                  <option>لاند كروزر</option>
-                                  <option>برادو</option>
+                                  <option *ngFor="let model of  vehicleModelMaster"
+                                  value="{{model. VehicleModelNameAr}}"
+                                >
+                                {{model. VehicleModelNameAr}}
+                           </option>
                                 </select>
                               </div>
                               <div class="col-3">
-                                <label for="exampleSelect1" class="font-size-h6">سنة صنع المركبة<span
-                                    class="text-danger">*</span></label>
-                                <select class="form-control select2" id="kt_select2_3" name="param">
-                                  <option>إختر سنة صنع المركبة</option>
-                                  <option>2020</option>
-                                  <option>2021</option>
-                                </select>
-                              </div>
-                              <div class="col-3">
-                                <label class="font-size-h6">قيمة المركبة<span
+                                <label for="exampleSelect1" class="font-size-h6">نوع هكيل المركبة<span
                                   class="text-danger">*</span></label>
-                                <div class="input-group">
-                                  <input type="currency" class="form-control form-control-lg" placeholder="إدخل قيمة المركبة">
-                                  <div class="input-group-append">
-                                    <button class="btn btn-currency" type="button">ر.س</button>
-                                  </div>
+                              <select class="form-control select2" id="kt_select2_34" name="param">
+
+                                <option *ngFor="let vehicleBody of  vehicleBodyCodeList"
+                                value="{{vehicleBody.Id}}"
+                              >
+                              {{vehicleBody.VehicleBodyTypeNameAr}}
+                              </select>
                                 </div>
+
+                              <div class="col-3">
+                                <label for="exampleSelect1" class="font-size-h6">الغرض من الاستخدام <span
+                                    class="text-danger">*</span></label>
+                                <select class="form-control select2" id="kt_select2_354" name="param">
+
+                                  <option *ngFor="let veichel of  veichelUsageOptions"
+                                  value="{{veichel.Id}}"
+                                >
+                                {{veichel.VehiclePurposeNameAr}}
+                                </select>
                               </div>
 
+
+                            </div>
+                          </div>
+                          <div id="scheduleWeekly" class="tab-pane fade">
+                            <div class="form-group row">
+                              <div class="col-md-4">
+                                <label for="exampleSelect1" class="font-size-h6 "> اختر الرقم التعريفي للمركبة<span class="text-danger">*</span></label>
+                                <div class="">
+                                    <div class="input-group">
+                                       <div class="input-group-addon arrow">
+                                                     <select class="form-control form-control-lg form-control-hype">
+                                                         <option>رقم البطاقة الجمركية</option>
+                                                         <option>الرقم التسلسلي</option>
+                                                         </select>
+                                       </div>
+                                       <input type="text" class="form-control form-control-lg"/>
+                                   </div>
+                                </div>
+                             </div>
+
+                            </div>
+
+
+                          </div>
+                          <div>
+                            <div class="form-group row">
+
+                                <div class="col-3">
+                                  <label for="exampleSelect1" class="font-size-h6">سنة صنع المركبة<span
+                                      class="text-danger">*</span></label>
+                                  <select class="form-control select2" id="kt_select2_3" name="param">
+                                    <option>إختر سنة صنع المركبة</option>
+                                    <option *ngFor="let year of  vehicleYears"
+                                    value="{{year}}"
+                                  >
+                                  {{year}}
+                                  </select>
+                                </div>
+                                <div class="col-3">
+                                  <label class="font-size-h6">قيمة المركبة<span
+                                    class="text-danger">*</span></label>
+                                  <div class="input-group">
+                                    <input type="currency" class="form-control form-control-lg" placeholder="إدخل قيمة المركبة">
+                                    <div class="input-group-append">
+                                      <button class="btn btn-currency" type="button">ر.س</button>
+                                    </div>
+                                  </div>
+                                </div>
                             </div>
                             <div class="separator separator-dashed my-5"></div>
                             <div class="form-group  row">
@@ -105,10 +142,11 @@
                                   <span class="text-danger">*</span></label>
                                 <select class="form-control select2" id="kt_select2_5" name="param">
                                   <option>إختر شهر ميلاد المستأجر</option>
-                                  <option>محرم</option>
-                                  <option>صفر</option>
-                                  <option>ربيع أول</option>
-                                  <option>ربيع ثاني</option>
+                                  <option *ngFor="let month of hijrimonths"
+                                  value="{{month.number}}"
+                               >
+                                {{month.nameAr}}
+                           </option>
                                 </select>
                               </div>
                               <div class="col-3">
@@ -116,10 +154,10 @@
                                     class="text-danger">*</span></label>
                                 <select class="form-control select2" id="kt_select2_7" name="param">
                                   <option>إختر سنة ميلاد المستأجر</option>
-                                  <option>1980</option>
-                                  <option>1981</option>
-                                  <option>1982</option>
-                                  <option>1983</option>
+                                  <option *ngFor="let year of  years"
+                                  value="{{year}}"
+                                >
+                                {{year}}
                                 </select>
                               </div>
                               <div class="col-3">
@@ -127,17 +165,17 @@
                                   <span class="text-danger">*</span></label>
                                 <select class="form-control select2" id="kt_select2_11" name="param">
                                   <option>اختر عدد السنوات التعاقدية</option>
-                                  <option>1 سنة</option>
-                                  <option>2 سنة</option>
-                                  <option>3 سنة</option>
-                                  <option>4 سنة</option>
-                                  <option>5 سنة</option>
+                                  <option value ="1">1 سنة</option>
+                                  <option value ="2">2 سنة</option>
+                                  <option value ="3">3 سنة</option>
+                                  <option value ="4">4 سنة</option>
+                                  <option value ="5">5 سنة</option>
                                   </select>
                               </div>
 
                             </div>
                             <div class="form-group row">
-                              <div class="col-4">
+                              <div class="col-3">
                                 <label for="exampleSelect1" class="font-size-h6">تغطيات إضافية
                                   <span class="text-danger">*</span></label>
                                 <select class="form-control selectpicker mltselct" multiple>
@@ -153,15 +191,15 @@
 
                                 </select>
                               </div>
-                              <div class="col-4">
+                              <div class="col-3">
                                 <label for="exampleSelect1" class="font-size-h6">قيمة التحمل
                                   <span class="text-danger">*</span></label>
                                 <select class="form-control select2" id="kt_select2_4" name="param">
                                   <option> إختر قيمة التحمل</option>
-                                  <option>1000</option>
-                                  <option>2000</option>
-                                  <option>3000</option>
-                                  <option>4000</option>
+                                  <option *ngFor="let value of  deductibleValue"
+                                  value="{{value}}"
+                                >
+                                {{value}}
                                 </select>
                               </div>
                               <div class="col-4">
@@ -169,10 +207,12 @@
                                   <span class="text-danger">*</span></label>
                                 <select class="form-control select2" id="kt_select5_10" name="param">
                                 <option label="Label">إختر مكان إصلاح المركبة</option>
-                                  <option value="AK">وكالة</option>
-                                  <option value="HI">ورشة</option>
+                                  <option value="2">ورشات التصليح</option>
+                                  <option value="1">الوكالات المعتمدة
+                                  </option>
                                 </select>
                               </div>
+
                             </div>
 
                             <div class="separator separator-dashed my-5"></div>
@@ -257,204 +297,7 @@
                               </div>
                             </div>
                           </div>
-                          <div id="scheduleWeekly" class="tab-pane fade">
-                            <div class="form-group row">
-                              <div class="col-md-4">
-                                <label for="exampleSelect1" class="font-size-h6 "> اختر الرقم التعريفي للمركبة<span class="text-danger">*</span></label>
-                                <div class="">
-                                    <div class="input-group">
-                                       <div class="input-group-addon arrow">
-                                                     <select class="form-control form-control-lg form-control-hype">
-                                                         <option>رقم البطاقة الجمركية</option>
-                                                         <option>الرقم التسلسلي</option>
-                                                         </select>
-                                       </div>
-                                       <input type="text" class="form-control form-control-lg"/>
-                                   </div>
-                                </div>
-                             </div>
-                              <div class="col-3">
-                                <label for="exampleSelect1" class="font-size-h6">سنة صنع المركبة<span
-                                    class="text-danger">*</span></label>
-                                <select class="form-control select2" id="kt_select3_3" name="param">
-                                  <option>إختر سنة صنع المركبة</option>
-                                  <option>2020</option>
-                                  <option>2021</option>
-                                </select>
-                              </div>
-                              <div class="col-3">
-                                <label class="font-size-h6">قيمة المركبة<span
-                                  class="text-danger">*</span></label>
-                                <div class="input-group">
-                                  <input type="currency" class="form-control form-control-lg" placeholder="إدخل قيمة المركبة">
-                                  <div class="input-group-append">
-                                    <button class="btn btn-currency" type="button">ر.س</button>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                            <div class="form-group  row">
-                              <div class="col-3">
-                                <label class="font-size-h6">هوية المستأجر<span
-                                    class="text-danger">*</span></label>
-                                <input type="email" class="form-control form-control-lg"
-                                  placeholder="أدخل هوية المستأجر" />
-                              </div>
-                              <div class="col-3">
-                                <label for="exampleSelect1" class="font-size-h6">تاريخ ميلاد المستأجر (شهر)
-                                  <span class="text-danger">*</span></label>
-                                <select class="form-control select2" id="kt_select3_4" name="param">
-                                  <option>إختر شهر ميلاد المستأجر</option>
-                                  <option>محرم</option>
-                                  <option>صفر</option>
-                                  <option>ربيع أول</option>
-                                  <option>ربيع ثاني</option>
-                                </select>
-                              </div>
-                              <div class="col-3">
-                                <label for="exampleSelect1" class="font-size-h6">تاريخ ميلاد المستأجر (سنة)<span
-                                    class="text-danger">*</span></label>
-                                <select class="form-control select2" id="kt_select3_5" name="param">
-                                  <option>إختر سنة ميلاد المستأجر</option>
-                                  <option>1980</option>
-                                  <option>1981</option>
-                                  <option>1982</option>
-                                  <option>1983</option>
-                                </select>
-                              </div>
-                              <div class="col-3">
-                                <label for="exampleSelect1" class="font-size-h6">مدة العقد
-                                  <span class="text-danger">*</span></label>
-                                <select class="form-control select2" id="kt_select3_2" name="param">
-                                  <option>اختر عدد السنوات التعاقدية</option>
-                                  <option>1 سنة</option>
-                                  <option>2 سنة</option>
-                                  <option>3 سنة</option>
-                                  <option>4 سنة</option>
-                                  <option>5 سنة</option>
-                                  </select>
-                              </div>
 
-                            </div>
-                            <div class="separator separator-dashed my-8"></div>
-                            <div class="form-group row">
-                              <div class="col-4">
-                                <label for="exampleSelect1" class="font-size-h6">تغطيات إضافية
-                                  <span class="text-danger">*</span></label>
-                                <select class="form-control selectpicker mltselct" multiple>
-                                  <option>استبدال سيارة
-                                  </option>
-                                  <option>التغطية الجغرافية لدول مجلس التعاون الخليجي لمدة 12 شهر
-                                  </option>
-                                  <option>تغطية الحوادث الشخصية للسائق
-                                  </option>
-                                  <option>تغطية الحوادث الشخصية للسائق والركاب
-
-                                  </option>
-
-                                </select>
-                              </div>
-                              <div class="col-4">
-                                <label for="exampleSelect1" class="font-size-h6">قيمة التحمل
-                                  <span class="text-danger">*</span></label>
-                                <select class="form-control select2" id="kt_select4_7" name="param">
-                                  <option> إختر قيمة التحمل</option>
-                                  <option>1000</option>
-                                  <option>2000</option>
-                                  <option>3000</option>
-                                  <option>4000</option>
-                                </select>
-                              </div>
-                              <div class="col-4">
-                                <label for="exampleSelect1" class="font-size-h6">إصلاح المركبة
-                                  <span class="text-danger">*</span></label>
-                                <select class="form-control select2" id="kt_select4_10" name="param">
-                                <option label="Label">إختر مكان إصلاح المركبة</option>
-                                  <option value="AK">وكالة</option>
-                                  <option value="HI">ورشة</option>
-                                </select>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col-12">
-                                <button class="btn btn-lg btn-driver font-weight-bold font-size-h5 mb-5"
-                                  type="button" data-toggle="collapse" data-target="#collapseExample"
-                                  aria-expanded="false" aria-controls="collapseExample"> <i
-                                    class="far fa-address-card icon-2x text-white"></i>
-                                  هل ترغب في إضافة سائق إضافي
-                                </button>
-                                <div class="collapse" id="collapseExample">
-                                  <div class="card card-body">
-                                    <div id="kt_repeater_1">
-                                      <div class=" row ">
-                                        <label class="col-lg-12 col-form-label text-left font-size-h4 ">إضافة سائق إضافي</label>
-                                        <div data-repeater-list="" class="col-lg-12 ">
-                                          <div data-repeater-item class="form-group row align-items-end ">
-                                            <div class="col-4">
-                                              <label class="font-size-h6 ">هوية السائق<span
-                                                  class="text-danger">*</span></label>
-                                              <input type="email" class="form-control form-control-lg"
-                                                placeholder="أدخل هوية السائق" />
-                                            </div>
-                                            <div class="col-2">
-                                              <label for="exampleSelect1" class="font-size-h6 ">تاريخ ميلاد
-                                                السائق<span class="text-danger">*</span></label>
-                                              <select class="form-control select2" id="kt_select3_8"
-                                                name="param">
-                                                <option>الشهر</option>
-                                                <option>محرم</option>
-                                                <option>صفر</option>
-                                                <option>ربيع أول</option>
-                                                <option>ربيع ثاني</option>
-                                              </select>
-                                            </div>
-                                            <div class="col-2">
-                                              <label for="exampleSelect1" class="font-size-h6 ">تاريخ ميلاد
-                                                السائق<span class="text-danger">*</span></label>
-                                              <select class="form-control select2" id="kt_select3_9"
-                                                name="param">
-                                                <option>السنة</option>
-                                                <option>1980</option>
-                                                <option>1981</option>
-                                                <option>1982</option>
-                                                <option>1983</option>
-                                              </select>
-                                            </div>
-                                            <div class="col-2">
-                                              <label for="exampleSelect1" class="font-size-h6 "> نوع
-                                                العلاقة<span class="text-danger">*</span></label>
-                                              <select class="form-control select2" id="kt_select3_10"
-                                                name="param">
-                                                <option>إختر نوع العلاقة</option>
-                                                <option>إبن</option>
-                                                <option>إبنة</option>
-                                                <option>زوجة</option>
-                                                <option>سائق خاص</option>
-                                              </select>
-                                            </div>
-                                            <div class="col-md-2  ">
-                                              <a href="javascript:;" data-repeater-delete=""
-                                                class="btn btn-lg font-weight-bolder btn-light-danger">
-                                                <i class="la la-trash-o"></i>حذف
-                                              </a>
-                                            </div>
-                                          </div>
-                                        </div>
-                                      </div>
-                                      <div class=" row">
-                                        <div class="col-lg-4">
-                                          <a href="javascript:;" data-repeater-create=""
-                                            class="btn btn-lg font-weight-bolder btn-light-success">
-                                            <i class="la la-plus"></i>إضافه سائق
-                                          </a>
-                                        </div>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
                           <div class="separator separator-dashed my-8"></div>
                         </div>
                       </div>
@@ -467,207 +310,7 @@
                       </div>
                     </div>
                   </div>
-                  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                    <div class="row">
-                      <div><label class="col-12 font-weight-bolder font-size-h4 mb-10">لإصدار الوثيقة فضلا
-                          إستكمال البيانات التالية</label></div>
-                      <div class="col-12">
-                        <div class="form-group row ">
 
-                          <div class="col-3">
-                            <label class="font-size-h6">رقم البطاقة الجمركية<span
-                                class="text-danger">*</span></label>
-                            <input type="email" class="form-control form-control-lg"
-                              placeholder="أدخل رقم البطاقة الجمركية" />
-                          </div>
-                          <div class="col-3">
-                            <label for="exampleSelect1" class="font-size-h6">سنة صنع المركبة<span
-                                class="text-danger">*</span></label>
-                            <select class="form-control select2" id="kt_select4_3" name="param">
-                              <option>إختر سنة صنع المركبة</option>
-                              <option>2020</option>
-                              <option>2021</option>
-                            </select>
-                          </div>
-                          <div class="col-3">
-                            <label class="font-size-h6">قيمة المركبة<span
-                              class="text-danger">*</span></label>
-                            <div class="input-group">
-                              <input type="currency" class="form-control form-control-lg" placeholder="إدخل قيمة المركبة">
-                              <div class="input-group-append">
-                                <button class="btn btn-currency" type="button">ر.س</button>
-                              </div>
-                            </div>
-                          </div>
-
-                        </div>
-                        <div class="separator separator-dashed my-8"></div>
-                        <div class="form-group  row">
-                          <div class="col-4">
-                            <label class="font-size-h6">هوية المستأجر<span class="text-danger">*</span></label>
-                            <input type="email" class="form-control form-control-lg"
-                              placeholder="أدخل هوية المستأجر" />
-                          </div>
-                          <div class="col-3">
-                            <label for="exampleSelect1" class="font-size-h6">تاريخ ميلاد المستأجر (شهر)
-                              <span class="text-danger">*</span></label>
-                            <select class="form-control select2" id="kt_select4_5" name="param">
-                              <option>إختر شهر ميلاد المستأجر</option>
-                              <option>محرم</option>
-                              <option>صفر</option>
-                              <option>ربيع أول</option>
-                              <option>ربيع ثاني</option>
-                            </select>
-                          </div>
-                          <div class="col-3">
-                            <label for="exampleSelect1" class="font-size-h6">تاريخ ميلاد المستأجر (سنة)
-                              <span class="text-danger">*</span></label>
-                            <select class="form-control select2" id="kt_select4_6" name="param">
-                              <option>إختر سنة ميلاد المستأجر</option>
-                              <option>1980</option>
-                              <option>1981</option>
-                              <option>1982</option>
-                              <option>1983</option>
-                            </select>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div class="separator separator-dashed my-8"></div>
-
-                    <div class="row">
-                      <div class="col-12">
-                        <button class="btn btn-lg btn-driver font-weight-bold font-size-h5 mb-5" type="button"
-                          data-toggle="collapse" data-target="#collapseExample" aria-expanded="false"
-                          aria-controls="collapseExample"> <i
-                            class="far fa-address-card icon-2x text-white"></i>
-                          هل ترغب في إضافة سائق إضافي
-                        </button>
-                        <div class="collapse" id="collapseExample">
-                          <div class="card card-body">
-                            <div id="kt_repeater_1">
-                              <div class=" row ">
-                                <label class="col-lg-12 col-form-label text-left font-size-h4 ">إضافة
-                                  سائق إضافي</label>
-                                <div data-repeater-list="" class="col-lg-12 ">
-                                  <div data-repeater-item class="form-group row align-items-end ">
-                                    <div class="col-4">
-                                      <label class="font-size-h6 ">هوية السائق<span
-                                          class="text-danger">*</span></label>
-                                      <input type="email" class="form-control form-control-lg"
-                                        placeholder="أدخل هوية السائق" />
-                                    </div>
-                                    <div class="col-2">
-                                      <label for="exampleSelect1" class="font-size-h6 ">تاريخ ميلاد
-                                        السائق<span class="text-danger">*</span></label>
-                                      <select class="form-control select2" id="kt_select4_8" name="param">
-                                        <option>الشهر</option>
-                                        <option>محرم</option>
-                                        <option>صفر</option>
-                                        <option>ربيع أول</option>
-                                        <option>ربيع ثاني</option>
-                                      </select>
-                                    </div>
-                                    <div class="col-2">
-                                      <label for="exampleSelect1" class="font-size-h6 ">تاريخ ميلاد
-                                        السائق<span class="text-danger">*</span></label>
-                                      <select class="form-control select2" id="kt_select4_9" name="param">
-                                        <option>السنة</option>
-                                        <option>1980</option>
-                                        <option>1981</option>
-                                        <option>1982</option>
-                                        <option>1983</option>
-                                      </select>
-                                    </div>
-                                    <div class="col-2">
-                                      <label for="exampleSelect1" class="font-size-h6 "> نوع
-                                        العلاقة<span class="text-danger">*</span></label>
-                                      <select class="form-control select2" id="kt_select5_1" name="param">
-                                        <option>إختر نوع العلاقة</option>
-                                        <option>إبن</option>
-                                        <option>إبنة</option>
-                                        <option>زوجة</option>
-                                        <option>سائق خاص</option>
-                                      </select>
-                                    </div>
-                                    <div class="col-md-2  ">
-                                      <a href="javascript:;" data-repeater-delete=""
-                                        class="btn btn-lg font-weight-bolder btn-light-danger">
-                                        <i class="la la-trash-o"></i>حذف
-                                      </a>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class=" row">
-                                <div class="col-lg-4">
-                                  <a href="javascript:;" data-repeater-create=""
-                                    class="btn btn-lg font-weight-bolder btn-light-success">
-                                    <i class="la la-plus"></i>إضافه سائق
-                                  </a>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="separator separator-dashed my-8"></div>
-                    <div class="row">
-                      <div class="col-12 checkbox-inline justify-content-end">
-                        <a href="qoute.html" type="button" class="btn btn-primary px-25 btn-lg">
-                          إصدر الوثيقة
-                        </a>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="tab-pane fade" id="profile-2" role="tabpanel" aria-labelledby="profile-tab-2">
-                    <div class="row">
-                      <div><label class="col-12 font-weight-bolder font-size-h4 mb-10"> فضلا إرفاق ملف معلومات
-                          المركبات لإصدار الوثائق </label></div>
-
-                      <div class="col-12">
-
-                        <div class="form-group row">
-                          <div class="col-lg-9">
-                            <div class="dropzone dropzone-multi" id="kt_dropzone_4">
-                              <div class="dropzone-panel mb-lg-0 mb-2">
-                                <a
-                                  class="dropzone-select btn btn-light-primary px-35 text-primary font-weight-bold btn-lg dz-clickable">إرفاق
-                                  الملف</a>
-                                <a class="dropzone-upload btn btn-light-primary font-weight-bold btn-sm">Upload
-                                  All</a>
-                                <a class="dropzone-remove-all btn btn-light-primary font-weight-bold btn-sm">Remove
-                                  All</a>
-                              </div>
-                              <div class="dropzone-items">
-
-                              </div>
-                              <div class="dz-default dz-message"><button class="dz-button" type="button">Drop
-                                  files here to upload</button></div>
-                            </div>
-                          </div>
-                        </div>
-
-
-                        <div class="alert-text font-weight-bold ml-7 mt-5">قبل ارفاق الملف ولضمان دقة المعلومات
-                          فضلاً قمت بتحميل <a href="#">“عينة من الملف”</a>
-                        </div>
-                      </div>
-                    </div>
-                    <div class="separator separator-dashed my-8"></div>
-
-                    <div class="row">
-                      <div class="col-12 checkbox-inline justify-content-end">
-                        <a href="multiproposal.html" type="button" class="btn btn-primary px-25 btn-lg font-size-h5">
-                          إصدار
-                        </a>
-                      </div>
-                    </div>
-
-
-                  </div>
                 </div>
               </div>
               <!--end::Nav Tabs-->

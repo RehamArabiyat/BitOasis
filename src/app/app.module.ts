@@ -8,6 +8,10 @@ import { FooterComponent } from './footer/footer.component';
 import { ProposalComponent } from './proposal/proposal.component';
 import { ProposalRequestComponent } from './proposal-request/proposal-request.component';
 import { PolicyDetailsComponent } from './header/policy-details/policy-details.component';
+import { JwtInterceptorService } from './services/http-services/jwt-interceptor.service';
+import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { DocumentComponent } from './document/document.component';
 
 @NgModule({
   declarations: [
@@ -16,13 +20,19 @@ import { PolicyDetailsComponent } from './header/policy-details/policy-details.c
     FooterComponent,
     ProposalComponent,
     ProposalRequestComponent,
-    PolicyDetailsComponent
+    PolicyDetailsComponent,
+    DocumentComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [{
+    provide: HTTP_INTERCEPTORS,
+    useClass: JwtInterceptorService,
+    multi: true,
+  }],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
